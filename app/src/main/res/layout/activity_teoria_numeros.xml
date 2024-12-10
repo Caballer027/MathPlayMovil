@@ -1,0 +1,152 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <!-- Botón de retroceso -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnBackClose"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="start"
+            android:layout_marginBottom="16dp"
+            app:tint="@android:color/white"
+            app:backgroundTint="@color/purple_700"
+            android:src="@drawable/ic_baseline_keyboard_arrow_left_24"
+            app:fabSize="mini" />
+
+        <!-- Título -->
+        <TextView
+            android:id="@+id/tvTitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¡Aprendamos a Contar! 🎉"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Introducción -->
+        <TextView
+            android:id="@+id/tvIntro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Los números nos ayudan a contar objetos. Contemos juntos algunos objetos y aprendamos los números."
+            android:textSize="16sp"
+            android:gravity="center"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Teoría Números Pares e Impares -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/rounded_corners"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Teoría: Números Pares e Impares"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Los números pares son aquellos que se pueden dividir exactamente entre 2, como 2, 4, 6, 8, 10. Los números impares no se pueden dividir exactamente entre 2, como 1, 3, 5, 7, 9."
+                android:textSize="14sp"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="8dp" />
+
+        </LinearLayout>
+
+        <!-- Teoría Números Mayores -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/rounded_corners_light"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Teoría: Números Mayores"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Para encontrar el número mayor entre dos números, simplemente compáralos. El número más grande es el mayor."
+                android:textSize="14sp"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="8dp" />
+
+        </LinearLayout>
+
+        <!-- Teoría Números Menores -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/rounded_corners"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Teoría: Números Menores"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Para encontrar el número menor entre dos números, simplemente compáralos. El número más pequeño es el menor."
+                android:textSize="14sp"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="8dp" />
+
+        </LinearLayout>
+
+        <!-- Video -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¡Mira este video para aprender más!"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/holo_purple"
+            android:layout_marginBottom="8dp" />
+
+        <WebView
+            android:id="@+id/webView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Botón Practicar -->
+        <Button
+            android:id="@+id/btnPracticar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="A Practicar 🎮"
+            android:backgroundTint="@color/purple_700"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+</ScrollView>

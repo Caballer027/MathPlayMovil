@@ -1,0 +1,96 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <!-- Botón de retroceso -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnBackClose"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="start"
+            android:layout_marginBottom="16dp"
+            app:tint="@android:color/white"
+            app:backgroundTint="@color/purple_700"
+            android:src="@drawable/ic_baseline_keyboard_arrow_left_24"
+            app:fabSize="mini" />
+
+        <!-- Título -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¡Aprendamos sobre Figuras Geométricas!"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Introducción -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Las figuras geométricas están por todas partes. Hay triángulos, círculos, cuadrados y muchas más."
+            android:textSize="16sp"
+            android:gravity="center"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Teoría de Geometría -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/rounded_corners"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Teoría: Figuras Geométricas"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Un triángulo tiene 3 lados: ▲\nUn círculo es redondo: ⚫\nUn cuadrado tiene 4 lados iguales: ■"
+                android:textSize="14sp"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="8dp" />
+
+        </LinearLayout>
+
+        <!-- Video -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¡Mira este video para aprender más!"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/holo_purple"
+            android:layout_marginBottom="8dp" />
+
+        <WebView
+            android:id="@+id/webView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Botón Practicar -->
+        <Button
+            android:id="@+id/btnPracticar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="A Practicar 🎮"
+            android:backgroundTint="@color/purple_700"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+</ScrollView>

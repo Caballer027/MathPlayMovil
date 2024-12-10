@@ -5,6 +5,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.room.Room
+import com.caballero.leo.mathplay.data.database.PokemonDatabase
+import com.caballero.leo.mathplay.data.database.entities.MyPokemonEntity
+import com.caballero.leo.mathplay.data.model.PokemonResponse
+import com.caballero.leo.mathplay.data.network.PokemonApi
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

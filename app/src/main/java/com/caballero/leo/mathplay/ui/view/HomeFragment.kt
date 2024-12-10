@@ -4,44 +4,39 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.google.android.material.tabs.TabLayoutMediator
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.caballero.leo.mathplay.R
-import com.caballero.leo.mathplay.databinding.FragmentHomeBinding
-import com.caballero.leo.mathplay.ui.adapter.StagesAdapter
-import com.caballero.leo.mathplay.ui.model.Stage
+import com.caballero.leo.mathplay.data.model.Card
+import com.caballero.leo.mathplay.ui.adapter.CardAdapter
 
 class HomeFragment : Fragment() {
 
-    private lateinit var binding: FragmentHomeBinding
-    private val stages = listOf(
-        Stage("Etapa 1: Números", R.drawable.numeros),
-        Stage("Etapa 2: Sumas y Restas", R.drawable.sumas),
-        Stage("Etapa 3: Secuencias", R.drawable.secuencias),
-        Stage("Etapa 4: Geometría", R.drawable.geometria),
-        Stage("Etapa 5: Fracciones", R.drawable.fracciones),
-        Stage("Etapa 6: División", R.drawable.division)
-    )
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var adapter: CardAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        binding = FragmentHomeBinding.inflate(inflater, container, false)
+    ): View? {
+        val view = inflater.inflate(R.layout.fragment_home, container, false)
 
-        setupViewPager()
-        return binding.root
-    }
+        recyclerView = view.findViewById(R.id.recyclerView)
+        recyclerView.layoutManager = LinearLayoutManager(context)
 
-    private fun setupViewPager() {
-        val adapter = StagesAdapter(stages) { stage ->
-            Toast.makeText(context, "Explorando ${stage.title}", Toast.LENGTH_SHORT).show()
-        }
-        binding.viewPagerStages.adapter = adapter
+        val cards = listOf(
+            Card("Números", R.drawable.numeros),
+            Card("Sumas y Restas", R.drawable.sumas_restas),
+            Card("Secuencias", R.drawable.secuencias),
+            Card("Geometría", R.drawable.geometria),
+            Card("Fracciones", R.drawable.fraccion),
+            Card("División", R.drawable.division)
+        )
 
-        // Conecta los indicadores
-        TabLayoutMediator(binding.tabLayoutIndicator, binding.viewPagerStages) { _, _ -> }.attach()
+        adapter = CardAdapter(cards, requireContext())
+        recyclerView.adapter = adapter
+
+        return view
     }
 }
-

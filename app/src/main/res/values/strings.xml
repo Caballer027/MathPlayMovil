@@ -4,7 +4,13 @@
     <string name="user_password">Contraseña</string>
     <string name="start_session">Iniciar sesión</string>
     <string name="register_me">Registrarme</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
+    <string name="hello_blank_fragment">Hola fragmento en blanco</string> <!-- Traducción corregida -->
+    <string name="login_header">Iniciar sesión</string>
+    <string name="login_with_google">Iniciar sesión con Google</string>
+    <string name="create_account">Crear cuenta</string>
+    <string name="full_name">Nombre completo</string>
+    <string name="birth_date">Fecha de nacimiento</string>
+    <string name="repeat_password">Repite la contraseña</string>
+    <string name="register">Registrarse</string>
+    <string name="student_role">Estudiante</string>
 </resources>

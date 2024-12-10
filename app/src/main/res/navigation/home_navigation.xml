@@ -18,9 +18,9 @@
         tools:layout="@layout/fragment_favorite" />
 
     <fragment
-        android:id="@+id/infoFragment"
-        android:name="com.caballero.leo.mathplay.ui.view.InfoFragment"
+        android:id="@+id/profileFragment"
+        android:name="com.caballero.leo.mathplay.ui.view.ProfileFragment"
         android:label="fragment_info"
-        tools:layout="@layout/fragment_info" />
+        tools:layout="@layout/fragment_profile" />
 
 </navigation>

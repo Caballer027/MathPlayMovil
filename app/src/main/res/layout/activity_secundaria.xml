@@ -1,0 +1,131 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Botón de retroceso -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnBackClose"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/ic_baseline_keyboard_arrow_left_24"
+        app:backgroundTint="@color/white"
+        app:fabSize="mini"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/purple_500" />
+
+    <!-- Contenedor de imagen y texto -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/icono"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/ic_buho" />
+
+        <TextView
+            android:layout_width="175dp"
+            android:layout_height="95dp"
+            android:layout_marginStart="8dp"
+            android:text="¿Qué grado más quisieras aprender?"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <!-- Título de la sección -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Niveles educativos de Secundaria"
+        android:paddingTop="24dp"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <!-- Opciones de selección -->
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="16dp">
+
+        <RadioButton
+            android:id="@+id/radio1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1° Grado"
+            android:button="@null"
+            android:background="@drawable/border_button_purple"
+            android:padding="12dp"
+            android:layout_marginBottom="8dp"
+            android:textAlignment="center" />
+
+        <RadioButton
+            android:id="@+id/radio2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2° Grado"
+            android:button="@null"
+            android:background="@drawable/border_button_purple"
+            android:padding="12dp"
+            android:layout_marginBottom="8dp"
+            android:textAlignment="center" />
+
+        <RadioButton
+            android:id="@+id/radio3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="3° Grado"
+            android:button="@null"
+            android:background="@drawable/border_button_purple"
+            android:padding="12dp"
+            android:layout_marginBottom="8dp"
+            android:textAlignment="center" />
+
+        <RadioButton
+            android:id="@+id/radio4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="4° Grado"
+            android:button="@null"
+            android:background="@drawable/border_button_purple"
+            android:padding="12dp"
+            android:layout_marginBottom="8dp"
+            android:textAlignment="center" />
+
+        <RadioButton
+            android:id="@+id/radio5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="5° Grado"
+            android:button="@null"
+            android:background="@drawable/border_button_purple"
+            android:padding="12dp"
+            android:layout_marginBottom="8dp"
+            android:textAlignment="center" />
+    </RadioGroup>
+
+    <!-- Espacio para empujar el botón al pie de página -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- Botón continuar -->
+    <Button
+        android:id="@+id/btnContinuar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_button"
+        android:enabled="false"
+        android:text="CONTINUAR"
+        android:textColor="#FFFFFF" />
+</LinearLayout>

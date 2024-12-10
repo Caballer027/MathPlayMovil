@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import com.caballero.leo.mathplay.data.database.entities.MyPokemonEntity
 import com.caballero.leo.mathplay.databinding.FragmentFavoriteBinding
+import com.caballero.leo.mathplay.ui.adapter.MyPokemonsAdapater
 import com.caballero.leo.mathplay.ui.viewmodel.FavoriteViewModel
 
 class FavoriteFragment : Fragment() {

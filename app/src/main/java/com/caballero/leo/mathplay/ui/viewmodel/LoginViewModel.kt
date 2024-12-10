@@ -3,20 +3,16 @@ package com.caballero.leo.mathplay.ui.viewmodel
 import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.caballero.leo.mathplay.data.database.SharedPreferencesRepository
 
-class LoginViewModel(
-    val context: Context
-): ViewModel() {
+class LoginViewModel(context: Context) : ViewModel() {
 
     val inputsError = MutableLiveData<Boolean>()
     val registerError = MutableLiveData<Boolean>()
     val authError = MutableLiveData<Boolean>()
     val loginSuccess = MutableLiveData<Boolean>()
 
-    private var sharedPreferencesRepository: SharedPreferencesRepository =
-        SharedPreferencesRepository().also {
-            it.setSharedPreference(context)
-        }
+    private var sharedPreferencesRepository: SharedPreferencesRepository = SharedPreferencesRepository(context)
 
     fun validateInputs(email: String, password: String) {
         if (isEmptyInputs(email, password)) {

@@ -18,13 +18,27 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/mathplay_logo" />
 
+    <!-- Botón de retroceso -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnBackClose"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:tint="@color/purple_500"
+        app:backgroundTint="@color/white"
+        android:src="@drawable/ic_baseline_keyboard_arrow_left_24"
+        app:fabSize="mini" />
+
     <!-- Encabezado -->
     <TextView
         android:id="@+id/tvLoginHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Iniciar Sesión"
+        android:text="@string/login_header"
         android:textSize="35sp"
         android:textColor="#6200EE"
         android:textStyle="bold"
@@ -48,7 +62,7 @@
             android:layout_height="50dp"
             android:inputType="textEmailAddress"
             android:background="@drawable/background_rounded_edit_text"
-            android:hint="Correo electrónico"
+            android:hint="@string/user_email"
             android:paddingHorizontal="15dp" />
 
         <EditText
@@ -57,7 +71,7 @@
             android:layout_height="50dp"
             android:layout_marginTop="15dp"
             android:inputType="textPassword"
-            android:hint="Contraseña"
+            android:hint="@string/user_password"
             android:background="@drawable/background_rounded_edit_text"
             android:paddingHorizontal="15dp" />
     </LinearLayout>
@@ -76,7 +90,7 @@
             android:id="@+id/btnLogin"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:text="Iniciar Sesión"
+            android:text="@string/start_session"
             android:textColor="#FFFFFF"
             android:backgroundTint="#6200EE" />
 
@@ -85,16 +99,7 @@
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:layout_marginTop="10dp"
-            android:text="Iniciar Sesión con Google"
-            android:textColor="#FFFFFF"
-            android:backgroundTint="#6200EE" />
-
-        <Button
-            android:id="@+id/btnRegister"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_marginTop="10dp"
-            android:text="Registrarse"
+            android:text="@string/login_with_google"
             android:textColor="#FFFFFF"
             android:backgroundTint="#6200EE" />
     </androidx.appcompat.widget.LinearLayoutCompat>

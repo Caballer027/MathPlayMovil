@@ -1,0 +1,96 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <!-- Botón de retroceso -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnBackClose"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="start"
+            android:layout_marginBottom="16dp"
+            app:tint="@android:color/white"
+            app:backgroundTint="@color/purple_700"
+            android:src="@drawable/ic_baseline_keyboard_arrow_left_24"
+            app:fabSize="mini" />
+
+        <!-- Título -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¡Aprendamos sobre Fracciones!"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Introducción -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Las fracciones son partes de algo. Por ejemplo, si tienes una pizza y la partes a la mitad, tienes dos pedazos iguales."
+            android:textSize="16sp"
+            android:gravity="center"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Teoría de Fracciones -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/rounded_corners"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Teoría: Fracciones"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Si tienes una pizza entera y la divides en 2, obtienes dos mitades. Cada mitad es una fracción de la pizza completa."
+                android:textSize="14sp"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="8dp" />
+
+        </LinearLayout>
+
+        <!-- Video -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¡Mira este video para aprender más!"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/holo_purple"
+            android:layout_marginBottom="8dp" />
+
+        <WebView
+            android:id="@+id/webView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Botón Practicar -->
+        <Button
+            android:id="@+id/btnPracticar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="A Practicar 🎮"
+            android:backgroundTint="@color/purple_700"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+</ScrollView>

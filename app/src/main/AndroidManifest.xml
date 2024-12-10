@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
@@ -14,24 +13,30 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MathPlay"
         tools:targetApi="31">
-        <activity
-            android:name=".ui.view.RegisterActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.view.LoginActivity"
-            android:exported="false" />
+
         <activity
             android:name=".ui.view.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ui.view.MainActivity"
-            android:exported="true" />
-    </application>
 
+        <activity android:name=".ui.view.InicioActivity" android:exported="true" />
+        <activity android:name=".ui.view.RegisterActivity" android:exported="true" />
+        <activity android:name=".ui.view.LoginActivity" android:exported="true" />
+        <activity android:name=".ui.view.EducationalLevelActivity" android:exported="true" />
+        <activity android:name=".ui.view.InicialActivity" android:exported="true" />
+        <activity android:name=".ui.view.PrimariaActivity" android:exported="true" />
+        <activity android:name=".ui.view.SecundariaActivity" android:exported="true" />
+        <activity android:name=".ui.MainActivity" android:exported="true" />
+        <activity android:name=".ui.view.TeoriaNumerosActivity" android:exported="true" />
+        <activity android:name=".ui.view.QuizActivity" android:exported="true" />
+        <activity android:name=".ui.view.TeoriaDivisionActivity" android:exported="true" />
+        <activity android:name=".ui.view.TeoriaFraccionesActivity" android:exported="true" />
+        <activity android:name=".ui.view.TeoriaGeometriaActivity" android:exported="true" />
+        <activity android:name=".ui.view.TeoriaSecuenciasActivity" android:exported="true" />
+        <activity android:name=".ui.view.TeoriaSumasRestasActivity" android:exported="true" />
+    </application>
 </manifest>

@@ -4,20 +4,36 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.caballero.leo.mathplay.ui.viewmodel.LoginViewModel
 import com.caballero.leo.mathplay.databinding.ActivityLoginBinding
+import com.caballero.leo.mathplay.ui.viewmodel.LoginViewModel
+import com.caballero.leo.mathplay.data.database.SharedPreferencesRepository
 
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var loginViewModel: LoginViewModel
     private lateinit var binding: ActivityLoginBinding
+    private lateinit var sharedPreferencesRepository: SharedPreferencesRepository
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        sharedPreferencesRepository = SharedPreferencesRepository(this)
+
         loginViewModel = LoginViewModel(this)
         observeValues()
+
+        binding.btnBackClose.setOnClickListener {
+            navigateToInicio()
+        }
+
+        binding.btnLogin.setOnClickListener {
+            loginViewModel.validateInputs(
+                email = binding.edtEmail.text.toString(),
+                password = binding.edtPassword.text.toString()
+            )
+        }
     }
 
     private fun observeValues() {
@@ -34,18 +50,18 @@ class LoginActivity : AppCompatActivity() {
         }
 
         loginViewModel.loginSuccess.observe(this) {
-            startActivity(Intent(this, MainActivity::class.java))
+            sharedPreferencesRepository.setUserAuthenticated(true)
+            navigateToEducationalLevel()
         }
+    }
 
-        binding.btnLogin.setOnClickListener {
-            loginViewModel.validateInputs(
-                email = binding.edtEmail.text.toString(),
-                password = binding.edtPassword.text.toString()
-            )
-        }
+    private fun navigateToEducationalLevel() {
+        startActivity(Intent(this, EducationalLevelActivity::class.java))
+        finish()
+    }
 
-        binding.btnRegister.setOnClickListener {
-            startActivity(Intent(this, RegisterActivity::class.java))
-        }
+    private fun navigateToInicio() {
+        startActivity(Intent(this, InicioActivity::class.java))
+        finish()
     }
 }

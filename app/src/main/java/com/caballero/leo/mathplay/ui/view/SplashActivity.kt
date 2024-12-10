@@ -9,16 +9,21 @@ import androidx.appcompat.app.AppCompatActivity
 import com.rommansabbir.animationx.Attention
 import com.rommansabbir.animationx.animationXAttention
 import com.caballero.leo.mathplay.databinding.ActivitySplashBinding
+import com.caballero.leo.mathplay.data.database.SharedPreferencesRepository
 
 class SplashActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySplashBinding
+    private lateinit var sharedPreferencesRepository: SharedPreferencesRepository
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySplashBinding.inflate(layoutInflater)
-        enableEdgeToEdge()
         setContentView(binding.root)
+
+        sharedPreferencesRepository = SharedPreferencesRepository(this)
+
+        enableEdgeToEdge()
         showAnimationLogo()
         runPostDelayed()
     }
@@ -29,17 +34,19 @@ class SplashActivity : AppCompatActivity() {
         }, 1000)
     }
 
-
     private fun runPostDelayed() {
         Handler(Looper.getMainLooper()).postDelayed({
-            goLoginActivity()
-        }, 7000)
+            navigateNextActivity()
+        }, 5000)
     }
 
-    private fun goLoginActivity() {
-        val intent = Intent(this, LoginActivity::class.java)
-        startActivity(intent)
+    private fun navigateNextActivity() {
+        val nextActivity = if (sharedPreferencesRepository.isUserAuthenticated()) {
+            EducationalLevelActivity::class.java
+        } else {
+            InicioActivity::class.java
+        }
+        startActivity(Intent(this, nextActivity))
         finish()
     }
 }
-

@@ -28,7 +28,7 @@
         android:layout_marginStart="24dp"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        app:tint="@color/havelock_blue"
+        app:tint="@color/purple_500"
         app:backgroundTint="@color/white"
         android:src="@drawable/ic_baseline_keyboard_arrow_left_24"
         app:fabSize="mini" />
@@ -38,7 +38,7 @@
         android:id="@+id/tvLoginRedirect"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Crear cuenta"
+        android:text="@string/create_account"
         android:textColor="#6200EE"
         android:textSize="35sp"
         android:textStyle="bold"
@@ -65,7 +65,7 @@
             android:layout_height="50dp"
             android:layout_marginBottom="10dp"
             android:background="@drawable/background_rounded_edit_text"
-            android:hint="Nombre completo"
+            android:hint="@string/full_name"
             android:inputType="textPersonName"
             android:paddingHorizontal="15dp" />
 
@@ -75,7 +75,7 @@
             android:layout_height="50dp"
             android:layout_marginBottom="10dp"
             android:background="@drawable/background_rounded_edit_text"
-            android:hint="Fecha de nacimiento (DD/MM/AAAA)"
+            android:hint="@string/birth_date"
             android:inputType="date"
             android:paddingHorizontal="15dp" />
 
@@ -85,7 +85,7 @@
             android:layout_height="50dp"
             android:layout_marginBottom="10dp"
             android:background="@drawable/background_rounded_edit_text"
-            android:hint="Correo electrónico"
+            android:hint="@string/user_email"
             android:inputType="textEmailAddress"
             android:paddingHorizontal="15dp" />
 
@@ -95,7 +95,7 @@
             android:layout_height="50dp"
             android:layout_marginBottom="10dp"
             android:background="@drawable/background_rounded_edit_text"
-            android:hint="Contraseña"
+            android:hint="@string/user_password"
             android:inputType="textPassword"
             android:paddingHorizontal="15dp" />
 
@@ -105,7 +105,7 @@
             android:layout_height="55dp"
             android:layout_marginBottom="20dp"
             android:background="@drawable/background_rounded_edit_text"
-            android:hint="Repetir contraseña"
+            android:hint="@string/repeat_password"
             android:inputType="textPassword"
             android:paddingHorizontal="15dp" />
 
@@ -122,10 +122,8 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edtPassword2"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toBottomOf="@id/edtPassword2">
 
         <Button
             android:id="@+id/btnRegister"
@@ -133,7 +131,7 @@
             android:layout_height="55dp"
             android:layout_marginBottom="10dp"
             android:backgroundTint="#6200EE"
-            android:text="Registrarse"
+            android:text="@string/register"
             android:textColor="#FFFFFF" />
 
         <Button

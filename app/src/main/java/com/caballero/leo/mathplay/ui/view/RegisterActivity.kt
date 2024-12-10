@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.caballero.leo.mathplay.R
+import com.caballero.leo.mathplay.data.database.SharedPreferencesRepository
 import com.caballero.leo.mathplay.databinding.ActivityRegisterBinding
 
 class RegisterActivity : AppCompatActivity() {
@@ -21,9 +22,7 @@ class RegisterActivity : AppCompatActivity() {
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        sharedPreferencesRepository = SharedPreferencesRepository().apply {
-            setSharedPreference(this@RegisterActivity)
-        }
+        sharedPreferencesRepository = SharedPreferencesRepository(this)
 
         // Ajuste de insets para la pantalla completa
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -34,11 +33,23 @@ class RegisterActivity : AppCompatActivity() {
 
         // Configurar el botón de registro
         binding.btnRegister.setOnClickListener {
+            val fullName = binding.edtFullName.text.toString().trim()
+            val birthDate = binding.edtBirthDate.text.toString().trim()
             val email = binding.edtEmail.text.toString().trim()
             val password = binding.edtPassword.text.toString().trim()
             val confirmPassword = binding.edtPassword2.text.toString().trim()
 
             // Validaciones
+            if (fullName.isEmpty()) {
+                Toast.makeText(this, "Ingrese su nombre completo", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            if (birthDate.isEmpty()) {
+                Toast.makeText(this, "Ingrese su fecha de nacimiento", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
             if (!isEmailValid(email)) {
                 Toast.makeText(this, "Ingrese un correo electrónico válido", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
@@ -55,12 +66,14 @@ class RegisterActivity : AppCompatActivity() {
             }
 
             // Registrar la información en SharedPreferences
+            sharedPreferencesRepository.saveUserFullName(fullName)
+            sharedPreferencesRepository.saveUserBirthDate(birthDate)
             sharedPreferencesRepository.saveUserEmail(email)
             sharedPreferencesRepository.saveUserPassword(password)
             Toast.makeText(this, "Usuario registrado con éxito", Toast.LENGTH_SHORT).show()
 
-            // Retornar al LoginActivity
-            val intent = Intent(this, LoginActivity::class.java)
+            // Redirigir a la actividad deseada
+            val intent = Intent(this, LoginActivity::class.java) // Cambia a la actividad que desees
             startActivity(intent)
             finish()
         }

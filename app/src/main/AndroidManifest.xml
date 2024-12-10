@@ -38,5 +38,7 @@
         <activity android:name=".ui.view.TeoriaGeometriaActivity" android:exported="true" />
         <activity android:name=".ui.view.TeoriaSecuenciasActivity" android:exported="true" />
         <activity android:name=".ui.view.TeoriaSumasRestasActivity" android:exported="true" />
+
+        <!-- Añade aquí cualquier otra actividad que uses para mostrar los puntajes y medallas -->
     </application>
 </manifest>
